@@ -101,6 +101,10 @@
 #include "linux/sched.h"
 #endif
 
+//#if BUILDFLAG(IS_OHOS)
+#include "build/build_config.h"
+//#endif  // BUILDFLAG(IS_OHOS)
+
 #ifndef PR_SET_PTRACER
 #define PR_SET_PTRACER 0x59616d61
 #endif
@@ -383,6 +387,9 @@ void ExceptionHandler::SignalHandler(int sig, siginfo_t* info, void* uc) {
   // be delivered to the appropriate handler.
   if (handled) {
     InstallDefaultHandler(sig);
+#if BUILDFLAG(IS_OHOS)
+    RestoreHandlersLocked();
+#endif  // BUILDFLAG(IS_OHOS)
   } else {
     RestoreHandlersLocked();
   }

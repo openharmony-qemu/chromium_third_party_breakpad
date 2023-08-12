@@ -53,6 +53,10 @@
 #include "google_breakpad/common/minidump_exception_linux.h"
 #include "third_party/lss/linux_syscall_support.h"
 
+#if defined(OSOHOS)
+#include "base/base_switches.h"
+#endif  // defined(OSOHOS)
+
 using google_breakpad::elf::FileID;
 
 #if defined(__ANDROID__)
@@ -347,8 +351,13 @@ LinuxDumper::ElfFileIdentifierForMapping(const MappingInfo& mapping,
   if (!mapped_file.data() || mapped_file.size() < SELFMAG)
     return false;
 
+#if BUILDFLAG(IS_OHOS)
+  bool success = true;
+#else
   bool success =
       FileID::ElfFileIdentifierFromMappedFile(mapped_file.data(), identifier);
+#endif  // BUILDFLAG(IS_OHOS)
+
   if (success && member && filename_modified) {
     mappings_[mapping_id]->name[my_strlen(mapping.name) -
                                 sizeof(kDeletedSuffix) + 1] = '\0';

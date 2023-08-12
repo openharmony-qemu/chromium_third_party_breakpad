@@ -33,6 +33,12 @@
 
 #include "common/linux/guid_creator.h"
 
+#include "base/base_switches.h"
+#if BUILDFLAG(IS_OHOS)
+#include "base/strings/string_util.h"
+#include "base/strings/stringprintf.h"
+#endif  // BUILDFLAG(IS_OHOS)
+
 namespace google_breakpad {
 
 //static
@@ -90,7 +96,13 @@ void MinidumpDescriptor::UpdatePath() {
   }
 
   path_.clear();
+
+#if BUILDFLAG(IS_OHOS)
+  path_ = directory_ + "/nweb-browser-minidump-" + guid_str + ".dmp";
+#else
   path_ = directory_ + "/" + guid_str + ".dmp";
+#endif  // BUILDFLAG(IS_OHOS)
+
   c_path_ = path_.c_str();
 }
 

@@ -176,7 +176,7 @@ bool LinuxPtraceDumper::ReadRegisters(ThreadInfo* info, pid_t tid) {
     return false;
   }
 
-#if !(defined(__ANDROID__) && defined(__ARM_EABI__))
+#if !(defined(__ANDROID__) || defined(__ARM_EABI__))
   // When running an arm build on an arm64 device, attempting to get the
   // floating point registers fails. On Android, the floating point registers
   // aren't written to the cpu context anyway, so just don't get them here.
