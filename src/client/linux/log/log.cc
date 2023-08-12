@@ -29,7 +29,7 @@
 
 #include "client/linux/log/log.h"
 
-#if defined(__ANDROID__)
+#if defined(__ANDROID__) && !defined(OSOHOS)
 #include <android/log.h>
 #include <dlfcn.h>
 #else
@@ -38,7 +38,7 @@
 
 namespace logger {
 
-#if defined(__ANDROID__)
+#if defined(__ANDROID__) && !defined(OSOHOS)
 namespace {
 
 // __android_log_buf_write() is not exported in the NDK and is being used by
@@ -74,7 +74,7 @@ int writeToCrashLog(const char* buf) {
 #endif
 
 int write(const char* buf, size_t nbytes) {
-#if defined(__ANDROID__)
+#if defined(__ANDROID__) && !defined(OSOHOS)
   return __android_log_write(ANDROID_LOG_WARN, kAndroidLogTag, buf);
 #else
   return sys_write(2, buf, nbytes);

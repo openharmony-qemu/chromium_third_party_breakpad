@@ -39,7 +39,7 @@ int write(const char* buf, size_t nbytes);
 // In the case of Android the log can be written to the default system log
 // (default behavior of write() above, or to the crash log (see
 // writeToCrashLog() below).
-#if defined(__ANDROID__)
+#if defined(__ANDROID__) && !defined(OSOHOS)
 
 // The logger must be initialized in a non-compromised context.
 void initializeCrashLogWriter();

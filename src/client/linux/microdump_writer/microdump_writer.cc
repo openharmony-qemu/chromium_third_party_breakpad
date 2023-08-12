@@ -198,7 +198,7 @@ class MicrodumpWriter {
 
   // Writes one line to the system log.
   void LogLine(const char* msg) {
-#if defined(__ANDROID__)
+#if defined(__ANDROID__) && !defined(OSOHOS)
     logger::writeToCrashLog(msg);
 #else
     logger::write(msg, my_strlen(msg));
