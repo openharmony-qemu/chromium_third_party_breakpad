@@ -1,37 +1,82 @@
-# chromium_third_party_breakpad
+# Breakpad
 
-#### 介绍
-Breakpad 是一个库和工具集
+Breakpad is a set of client and server components which implement a
+crash-reporting system.
 
-#### 软件架构
-软件架构说明
+* [Homepage](https://chromium.googlesource.com/breakpad/breakpad/)
+* [Documentation](./docs/)
+* [Bugs](https://bugs.chromium.org/p/google-breakpad/)
+* Discussion/Questions: [google-breakpad-discuss@googlegroups.com](https://groups.google.com/d/forum/google-breakpad-discuss)
+* Developer/Reviews: [google-breakpad-dev@googlegroups.com](https://groups.google.com/d/forum/google-breakpad-dev)
+* Tests: [![Build+Test CI](https://github.com/google/breakpad/actions/workflows/build-test-ci.yml/badge.svg)](https://github.com/google/breakpad/actions/workflows/build-test-ci.yml) [![Build status](https://ci.appveyor.com/api/projects/status/eguv4emv2rhq68u2?svg=true)](https://ci.appveyor.com/project/vapier/breakpad)
+* Coverage [![Coverity Status](https://scan.coverity.com/projects/9215/badge.svg)](https://scan.coverity.com/projects/google-breakpad)
 
+## Getting started (from main)
 
-#### 安装教程
+1.  First, [download depot_tools](http://dev.chromium.org/developers/how-tos/install-depot-tools)
+    and ensure that they’re in your `PATH`.
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+2.  Create a new directory for checking out the source code (it must be named
+    breakpad).
 
-#### 使用说明
+    ```sh
+    mkdir breakpad && cd breakpad
+    ```
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+3.  Run the `fetch` tool from depot_tools to download all the source repos.
 
-#### 参与贡献
+    ```sh
+    fetch breakpad
+    cd src
+    ```
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+4.  Build the source.
 
+    ```sh
+    ./configure && make
+    ```
 
-#### 特技
+    You can also cd to another directory and run configure from there to build
+    outside the source tree.
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+    This will build the processor tools (`src/processor/minidump_stackwalk`,
+    `src/processor/minidump_dump`, etc), and when building on Linux it will
+    also build the client libraries and some tools
+    (`src/tools/linux/dump_syms/dump_syms`,
+    `src/tools/linux/md2core/minidump-2-core`, etc).
+
+5.  Optionally, run tests.
+
+    ```sh
+    make check
+    ```
+
+6.  Optionally, install the built libraries
+
+    ```sh
+    make install
+    ```
+
+If you need to reconfigure your build be sure to run `make distclean` first.
+
+To update an existing checkout to a newer revision, you can
+`git pull` as usual, but then you should run `gclient sync` to ensure that the
+dependent repos are up-to-date.
+
+## To request change review
+
+1.  Follow the steps above to get the source and build it.
+
+2.  Make changes. Build and test your changes.
+    For core code like processor use methods above.
+    For linux/mac/windows, there are test targets in each project file.
+
+3.  Commit your changes to your local repo and upload them to the server.
+    http://dev.chromium.org/developers/contributing-code
+    e.g. `git commit ... && git cl upload ...`
+    You will be prompted for credential and a description.
+
+4.  At https://chromium-review.googlesource.com/ you'll find your issue listed;
+    click on it, then “Add reviewer”, and enter in the code reviewer. Depending
+    on your settings, you may not see an email, but the reviewer has been
+    notified with google-breakpad-dev@googlegroups.com always CC’d.
