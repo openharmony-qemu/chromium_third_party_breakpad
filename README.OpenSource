@@ -1,6 +1,6 @@
 [
     {
-        "Name": "chromium_third_party_breakpad",                   # 上游开源软件名全称
+        "Name": "breakpad",                   # 上游开源软件名全称
         "License":  "APSL-2.0",         # 上游开源软件中包含的许可证信息
         "License File": "LICENSE"      # 许可证所在文件路径
         "Version Number": "08bd844599bf04c71707e8f59a8013a941264695",
@@ -8,7 +8,7 @@
         "Description": "Breakpad 是一个库和工具集"           # 开源软件功能描述
     },
     {
-        "Name": "chromium_third_party_breakpad",                   # 上游开源软件名全称
+        "Name": "breakpad",                   # 上游开源软件名全称
         "License":  "Unicode-TOU",         # 上游开源软件中包含的许可证信息
         "License File": "LICENSE"      # 许可证所在文件路径
         "Version Number": "08bd844599bf04c71707e8f59a8013a941264695",
@@ -16,7 +16,7 @@
         "Description": "Breakpad 是一个库和工具集"           # 开源软件功能描述
     },
     {
-        "Name": "chromium_third_party_breakpad",                   # 上游开源软件名全称
+        "Name": "breakpad",                   # 上游开源软件名全称
         "License":  "GPLStyleLicense",         # 上游开源软件中包含的许可证信息
         "License File": "LICENSE"      # 许可证所在文件路径
         "Version Number": "08bd844599bf04c71707e8f59a8013a941264695",
@@ -24,7 +24,7 @@
         "Description": "Breakpad 是一个库和工具集"           # 开源软件功能描述
     },
     {
-        "Name": "chromium_third_party_breakpad",                   # 上游开源软件名全称
+        "Name": "breakpad",                   # 上游开源软件名全称
         "License":  "GPL-3.0+",         # 上游开源软件中包含的许可证信息
         "License File": "LICENSE"      # 许可证所在文件路径
         "Version Number": "08bd844599bf04c71707e8f59a8013a941264695",
@@ -32,7 +32,7 @@
         "Description": "Breakpad 是一个库和工具集"           # 开源软件功能描述
     },
     {
-        "Name": "chromium_third_party_breakpad",                   # 上游开源软件名全称
+        "Name": "breakpad",                   # 上游开源软件名全称
         "License":  "Artistic-2.0",         # 上游开源软件中包含的许可证信息
         "License File": "LICENSE"      # 许可证所在文件路径
         "Version Number": "08bd844599bf04c71707e8f59a8013a941264695",
@@ -40,7 +40,7 @@
         "Description": "Breakpad 是一个库和工具集"           # 开源软件功能描述
     },
     {
-        "Name": "chromium_third_party_breakpad",                   # 上游开源软件名全称
+        "Name": "breakpad",                   # 上游开源软件名全称
         "License":  "APSL-1.0+",         # 上游开源软件中包含的许可证信息
         "License File": "LICENSE"      # 许可证所在文件路径
         "Version Number": "08bd844599bf04c71707e8f59a8013a941264695",
