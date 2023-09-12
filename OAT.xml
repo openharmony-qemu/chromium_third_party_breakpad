@@ -8,58 +8,116 @@
                 <policyitem type="compatibility" name="APSL-1.0+" path=".*" desc="" />
                 <policyitem type="compatibility" name="GPLStyleLicense" path=".*" desc="" />
                 <policyitem type="compatibility" name="Unicode-TOU" path=".*" desc="" />
-                <policyitem type="compatibility" name="Khronos License1" path="src/processor.*" desc="" />
-                <policyitem type="compatibility" name="Khronos License2" path="src/third_party.*" desc="" />
-                <policyitem type="compatibility" name="Khronos License3" path="src/third_party/curl.*" desc="" />
-                <policyitem type="compatibility" name="Khronos License4" path="src/third_party/curl.*" desc="" />
-                <policyitem type="compatibility" name="Khronos License5" path="src/third_party/curl.*" desc="" />
+                <policyitem type="compatibility" name="Artistic-2.0" path=".*" desc="" />
             </policy>
         </policylist>
         <filefilterlist>
             <filefilter name="defaultPolicyFilter"
                 desc="Filters for compatibility,license header policies">
-                 <filteritem type="filepath" name="README.OpenSource"
+                <filteritem type="filepath" name="README.OpenSource"
                     desc="" />
-                    <filteritem type="filepath" name="src/third_party/mac_headers.*"
-                    desc="" />
-                    <filteritem type="filepath" name=".*LICENSE"
-                    desc="" />
-                    <filteritem type="filepath" name=".*breakpad"
-                    desc="" />
-                    <filteritem type="filepath" name=".*INSTALL"
+                <filteritem type="filepath" name="src/third_party/mac_headers.*"
                     desc="" />
             </filefilter>
             <filefilter name="defaultFilter">
                 <filteritem type="filepath" name="README.OpenSource"
                     desc="" />
+                <filteritem type="filepath" name=".*strings"
+                    desc="" />
+                <filteritem type="filepath" name=".*ico"
+                    desc="" />
+                <filteritem type="filepath" name=".*dmp"
+                    desc="" />
+                <filteritem type="filepath" name=".*png"
+                    desc="" />
+                <filteritem type="filepath" name=".*dump_syms_dwarf_data"
+                    desc="" />
+                <filteritem type="filepath" name=".*icns"
+                    desc="" />
+                <filteritem type="filepath" name=".*crashInMain"
+                    desc="" />
+                <filteritem type="filepath" name="src/client/mac.*"
+                    desc="" />
+                <filteritem type="filepath" name="src/tools/windows.*"
+                    desc="" />
+                <filteritem type="filepath" name="src/processor/testdata/symbols.*"
+                    desc="" />
+                <filteritem type="filepath" name="src/tools/solaris/dump_syms/testdata/dump_syms_regtest.o"
+                    desc="" />
             </filefilter>
         </filefilterlist>
         <licensematcherlist>
-            <licensematcher name="Khronos License1" desc="">
+            <licensematcher name="curl" desc="">
                 <licensetext name="
-                copyright notice, this list of conditions and the following disclaimer
+                * This software is licensed as described in the file COPYING, which
+                * you should have received as part of this distribution. The terms
+                * are also available at http://curl.haxx.se/docs/copyright.html.
+                *
+                * You may opt to use, copy, modify, merge, publish, distribute and/or sell
+                * copies of the Software, and permit persons to whom the Software is
+                * furnished to do so, under the terms of the COPYING file.
+                *
+                * This software is distributed on an &quot;AS IS&quot; basis, WITHOUT WARRANTY OF ANY
+                * KIND, either express or implied.
             " desc="" />
             </licensematcher>
-            <licensematcher name="Khronos License2" desc="">
+            <licensematcher name="AGPL-3.0-only" desc="">
                 <licensetext name="
-                Copyright (C) 1998 - 2009, Daniel Stenberg, &lt;daniel@haxx.se&gt;, et al.
+                // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+                // &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+                // LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+                // A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+                // OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+                // SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+                // LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+                // DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+                // THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+                // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+                // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             " desc="" />
             </licensematcher>
-            <licensematcher name="Khronos License3" desc="">
+            <licensematcher name="Artistic-2.0" desc="">
                 <licensetext name="
-                Copyright (C) 1998 - 2008, Daniel Stenberg, &lt;daniel@haxx.se&gt;, et al.
-            " desc="" />
-            </licensematcher>
-            <licensematcher name="Khronos License4" desc="">
-                <licensetext name="
-                 * Copyright (C) 1998 - 2006, Daniel Stenberg, &lt;daniel@haxx.se&gt;, et al.
-            " desc="" />
-            </licensematcher>
-            <licensematcher name="Khronos License5" desc="">
-                <licensetext name="
-                 * Copyright (C) 1998 - 2007, Daniel Stenberg, &lt;daniel@haxx.se&gt;, et al.
+                Name: libdisasm
+                URL: https://sourceforge.net/projects/bastard/files/libdisasm/0.23/libdisasm-0.23.tar.gz/download
+                Version: 0.23
+                License: Clarified-Artistic
+                License File: LICENSE
             " desc="" />
             </licensematcher> 
+            <licensematcher name="Artistic-2.0" desc="">
+                <licensetext name="
+                
+                The &quot;Clarified Artistic License&quot;
+
+				Preamble
+
+                The intent of this document is to state the conditions under which a
+                Package may be copied, such that the Copyright Holder maintains some
+                semblance of artistic control over the development of the package,
+                while giving the users of the package the right to use and distribute
+                the Package in a more-or-less customary fashion, plus the right to make
+                reasonable modifications.
+
+                Definitions:
+
+                &quot;Package&quot; refers to the collection of files distributed by the
+                Copyright Holder, and derivatives of that collection of files
+                created through textual modification.
+
+                &quot;Standard Version&quot; refers to such a Package if it has not been
+                modified, or has been modified in accordance with the wishes
+                of the Copyright Holder as specified below.
+            " desc="" />
+            </licensematcher>
+            <licensematcher name="FSFAP" desc="">
+                <licensetext name="
+                Copying and distribution of this file, with or without modification,
+                are permitted in any medium without royalty provided the copyright
+                notice and this notice are preserved.  This file is offered as-is,
+                without warranty of any kind.
+            " desc="" />
+            </licensematcher>
         </licensematcherlist>
     </oatconfig>
 </configuration>
