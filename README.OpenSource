@@ -1,50 +1,47 @@
 [
     {
-        "Name": "breakpad",                   # 上游开源软件名全称
-        "License":  "APSL-2.0",         # 上游开源软件中包含的许可证信息
-        "License File": "LICENSE"      # 许可证所在文件路径
+        "Name": "breakpad",
+        "License":  "BSD-3-Clause",
+        "License File": "LICENSE",
         "Version Number": "08bd844599bf04c71707e8f59a8013a941264695",
-        "Upstream URL": "https://chromium.googlesource.com/breakpad/breakpad.git@08bd844599bf04c71707e8f59a8013a941264695",   # 上游软件包发布地址
-        "Description": "Breakpad 是一个库和工具集"           # 开源软件功能描述
+        "Owner": "liujixin@huawei.com",
+        "Upstream URL": "https://chromium.googlesource.com/breakpad/breakpad.git@08bd844599bf04c71707e8f59a8013a941264695",
+        "Description": "Breakpad 是一个库和工具集"
     },
     {
-        "Name": "breakpad",                   # 上游开源软件名全称
-        "License":  "Unicode-TOU",         # 上游开源软件中包含的许可证信息
-        "License File": "LICENSE"      # 许可证所在文件路径
+        "Name": "breakpad",
+        "License":  "BSD-4-Clause-UC",
+        "License File": "LICENSE",
         "Version Number": "08bd844599bf04c71707e8f59a8013a941264695",
-        "Upstream URL": "https://chromium.googlesource.com/breakpad/breakpad.git@08bd844599bf04c71707e8f59a8013a941264695",   # 上游软件包发布地址
-        "Description": "Breakpad 是一个库和工具集"           # 开源软件功能描述
+        "Owner": "liujixin@huawei.com",
+        "Upstream URL": "https://chromium.googlesource.com/breakpad/breakpad.git@08bd844599bf04c71707e8f59a8013a941264695",
+        "Description": "Breakpad 是一个库和工具集"BSD-4-Clause-UC
     },
     {
-        "Name": "breakpad",                   # 上游开源软件名全称
-        "License":  "GPLStyleLicense",         # 上游开源软件中包含的许可证信息
-        "License File": "LICENSE"      # 许可证所在文件路径
+        "Name": "breakpad",
+        "License":  "APSL-2.0",
+        "License File": "LICENSE",
         "Version Number": "08bd844599bf04c71707e8f59a8013a941264695",
-        "Upstream URL": "https://chromium.googlesource.com/breakpad/breakpad.git@08bd844599bf04c71707e8f59a8013a941264695",   # 上游软件包发布地址
-        "Description": "Breakpad 是一个库和工具集"           # 开源软件功能描述
+        "Owner": "liujixin@huawei.com",
+        "Upstream URL": "https://chromium.googlesource.com/breakpad/breakpad.git@08bd844599bf04c71707e8f59a8013a941264695",
+        "Description": "Breakpad 是一个库和工具集"BSD-4-Clause-UC
     },
     {
-        "Name": "breakpad",                   # 上游开源软件名全称
-        "License":  "GPL-3.0+",         # 上游开源软件中包含的许可证信息
-        "License File": "LICENSE"      # 许可证所在文件路径
+        "Name": "breakpad",
+        "License":  "MIT",
+        "License File": "LICENSE",
         "Version Number": "08bd844599bf04c71707e8f59a8013a941264695",
-        "Upstream URL": "https://chromium.googlesource.com/breakpad/breakpad.git@08bd844599bf04c71707e8f59a8013a941264695",   # 上游软件包发布地址
-        "Description": "Breakpad 是一个库和工具集"           # 开源软件功能描述
-    },
+        "Owner": "liujixin@huawei.com",
+        "Upstream URL": "https://chromium.googlesource.com/breakpad/breakpad.git@08bd844599bf04c71707e8f59a8013a941264695",
+        "Description": "Breakpad 是一个库和工具集"BSD-4-Clause-UC
+    },	
     {
-        "Name": "breakpad",                   # 上游开源软件名全称
-        "License":  "Artistic-2.0",         # 上游开源软件中包含的许可证信息
-        "License File": "LICENSE"      # 许可证所在文件路径
+        "Name": "breakpad",
+        "License":  "Unicode Mappings License",
+        "License File": "LICENSE",
         "Version Number": "08bd844599bf04c71707e8f59a8013a941264695",
-        "Upstream URL": "https://chromium.googlesource.com/breakpad/breakpad.git@08bd844599bf04c71707e8f59a8013a941264695",   # 上游软件包发布地址
-        "Description": "Breakpad 是一个库和工具集"           # 开源软件功能描述
-    },
-    {
-        "Name": "breakpad",                   # 上游开源软件名全称
-        "License":  "APSL-1.0+",         # 上游开源软件中包含的许可证信息
-        "License File": "LICENSE"      # 许可证所在文件路径
-        "Version Number": "08bd844599bf04c71707e8f59a8013a941264695",
-        "Upstream URL": "https://chromium.googlesource.com/breakpad/breakpad.git@08bd844599bf04c71707e8f59a8013a941264695",   # 上游软件包发布地址
-        "Description": "Breakpad 是一个库和工具集"           # 开源软件功能描述
+        "Owner": "liujixin@huawei.com",
+        "Upstream URL": "https://chromium.googlesource.com/breakpad/breakpad.git@08bd844599bf04c71707e8f59a8013a941264695",
+        "Description": "Breakpad 是一个库和工具集"BSD-4-Clause-UC
     }
 ]
