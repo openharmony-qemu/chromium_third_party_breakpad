@@ -80,13 +80,13 @@ used to filter file path.
                 <filteritem type="filepath" name="src/third_party/libdisasm/LICENSE"
                     desc="chromuim原生文件无license" />
                 <filteritem type="filepath" name="src/third_party/mac_headers/i386/_types.h"
-                    desc="该文件涉及AGPL-3.0-only，经确认不会使用" />
+                    desc="经确认，该文件不会使用" />
                 <filteritem type="filepath" name="src/third_party/mac_headers/mach/.*"
-                    desc="该文件涉及AGPL-3.0-only，经确认不会使用" />
+                    desc="经确认，该文件不会使用" />
                 <filteritem type="filepath" name="src/processor/disassembler_x86.cc"
-                    desc="该文件涉及AGPL-3.0-only，经确认不会使用" />
+                    desc="经确认，该文件不会使用" />
                 <filteritem type="filepath" name="m4/ax.*m4"
-                    desc="该文件涉及GPL-3.0+，经确认不会使用" />
+                    desc="经确认，该文件不会使用" />
             </filefilter>
 
             <filefilter name="defaultFilter">
