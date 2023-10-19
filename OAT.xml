@@ -66,7 +66,7 @@ used to filter file path.
                 <policyitem type="compatibility" name="APSL-2.0" path="src/client/mac/handler/breakpad_nlist_64.cc" desc="经法务确认为宽松型许可证" />
                 <policyitem type="compatibility" name="APSL-1.0+" path="src/third_party/mac_headers/.*" desc="经法务确认为宽松型许可证" />
                 <policyitem type="compatibility" name="FSFULLR" path="m4/libtool.m4" desc="经法务确认为宽松型许可证" />
-                <policyitem type="compatibility" name="Unknown License file reference" path="src/third_party/curl.*" desc="经法务确认为宽松型许可证" />
+                <policyitem type="compatibility" name="curl" path="src/third_party/curl.*" desc="经法务确认为宽松型许可证" />
                 <policyitem type="compatibility" name="Artistic-2.0" path="src/third_party/libdisasm/.*" desc="经法务确认为宽松型许可证" />
                 <policyitem type="compatibility" name="Unicode-TOU" path="src/common/.*" desc="经法务确认为宽松型许可证" />
                 <policyitem type="compatibility" name="FSFAP" path="INSTALL" desc="经法务确认为宽松型许可证" />   
@@ -80,13 +80,13 @@ used to filter file path.
                 <filteritem type="filepath" name="src/third_party/libdisasm/LICENSE"
                     desc="chromuim原生文件无license" />
                 <filteritem type="filepath" name="src/third_party/mac_headers/i386/_types.h"
-                    desc="AGPL-3.0-only禁止使用" />
+                    desc="该文件涉及AGPL-3.0-only，经确认不会使用" />
                 <filteritem type="filepath" name="src/third_party/mac_headers/mach/.*"
-                    desc="AGPL-3.0-only禁止使用" />
+                    desc="该文件涉及AGPL-3.0-only，经确认不会使用" />
                 <filteritem type="filepath" name="src/processor/disassembler_x86.cc"
-                    desc="AGPL-3.0-only禁止使用" />
+                    desc="该文件涉及AGPL-3.0-only，经确认不会使用" />
                 <filteritem type="filepath" name="m4/ax.*m4"
-                    desc="GPL-3.0+禁止使用" />
+                    desc="该文件涉及GPL-3.0+，经确认不会使用" />
             </filefilter>
 
             <filefilter name="defaultFilter">
@@ -138,11 +138,18 @@ used to filter file path.
                 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
                 " desc="" />
             </licensematcher>
-            <licensematcher name="Unknown License file reference" desc="">
+            <licensematcher name="curl" desc="">
                 <licensetext name="
-                * This software is licensed as described in the file COPYING, which
+                *  This software is licensed as described in the file COPYING, which
                 * you should have received as part of this distribution. The terms
                 * are also available at http://curl.haxx.se/docs/copyright.html.
+                * 
+                * You may opt to use, copy, modify, merge, publish, distribute and/or sell
+                * copies of the Software, and permit persons to whom the Software is
+                * furnished to do so, under the terms of the COPYING file.
+                *
+                * This software is distributed on an &quot;AS IS&quot; basis, WITHOUT WARRANTY OF ANY
+                * KIND, either express or implied.
                 " desc="" />
             </licensematcher>
             <licensematcher name="Artistic-2.0" desc="">
