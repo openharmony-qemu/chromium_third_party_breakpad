@@ -104,10 +104,6 @@
 #include "linux/sched.h"
 #endif
 
-#if defined(OHOS_CRASH_DUMP)
-#include "build/build_config.h"
-#endif  // defined(OHOS_CRASH_DUMP)
-
 #ifndef PR_SET_PTRACER
 #define PR_SET_PTRACER 0x59616d61
 #endif
@@ -390,9 +386,6 @@ void ExceptionHandler::SignalHandler(int sig, siginfo_t* info, void* uc) {
   // be delivered to the appropriate handler.
   if (handled) {
     InstallDefaultHandler(sig);
-#if defined(OHOS_CRASH_DUMP)
-    RestoreHandlersLocked();
-#endif  // defined(OHOS_CRASH_DUMP)
   } else {
     RestoreHandlersLocked();
   }

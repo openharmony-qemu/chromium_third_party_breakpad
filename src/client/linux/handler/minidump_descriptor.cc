@@ -36,12 +36,6 @@
 
 #include "common/linux/guid_creator.h"
 
-#if defined(OHOS_CRASH_DUMP)
-#include "base/base_switches.h"
-#include "base/strings/string_util.h"
-#include "base/strings/stringprintf.h"
-#endif  // defined(OHOS_CRASH_DUMP)
-
 namespace google_breakpad {
 
 //static
@@ -99,13 +93,7 @@ void MinidumpDescriptor::UpdatePath() {
   }
 
   path_.clear();
-
-#if defined(OHOS_CRASH_DUMP)
-  path_ = directory_ + "/nweb-browser-minidump-" + guid_str + ".dmp";
-#else
   path_ = directory_ + "/" + guid_str + ".dmp";
-#endif  // defined(OHOS_CRASH_DUMP)
-
   c_path_ = path_.c_str();
 }
 
