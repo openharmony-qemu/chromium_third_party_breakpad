@@ -62,10 +62,6 @@
 #include "common/linux/linux_libc_support.h"
 #include "third_party/lss/linux_syscall_support.h"
 
-#if defined(OHOS_CRASH_DUMP)
-#include "build/build_config.h"
-#endif  // defined(OHOS_CRASH_DUMP)
-
 // Suspends a thread by attaching to it.
 static bool SuspendThread(pid_t pid) {
   // This may fail if the thread has just died or debugged.
@@ -183,15 +179,6 @@ bool LinuxPtraceDumper::ReadRegisters(ThreadInfo* info, pid_t tid) {
     return false;
   }
 
-#if defined(OHOS_CRASH_DUMP)
-#if !defined(__ARM_EABI__)
-  void* fp_addr;
-  info->GetFloatingPointRegisters(&fp_addr, NULL);
-  if (sys_ptrace(PTRACE_GETFPREGS, tid, NULL, fp_addr) == -1) {
-    return false;
-  }
-#endif  // !defined(__ARM_EABI__)
-#else  // defined(OHOS_CRASH_DUMP)
 #if !(defined(__ANDROID__) && defined(__ARM_EABI__))
   // When running an arm build on an arm64 device, attempting to get the
   // floating point registers fails. On Android, the floating point registers
@@ -203,7 +190,6 @@ bool LinuxPtraceDumper::ReadRegisters(ThreadInfo* info, pid_t tid) {
     return false;
   }
 #endif  // !(defined(__ANDROID__) && defined(__ARM_EABI__))
-#endif  // defined(OHOS_CRASH_DUMP)
   return true;
 #else  // PTRACE_GETREGS
   return false;
