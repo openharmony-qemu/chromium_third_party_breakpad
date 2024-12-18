@@ -6,6 +6,6 @@
         "Version Number": "08bd844599bf04c71707e8f59a8013a941264695",
         "Owner": "liujixin@huawei.com",
         "Upstream URL": "https://chromium.googlesource.com/breakpad/breakpad.git@08bd844599bf04c71707e8f59a8013a941264695",
-        "Description": "Breakpad 是一个库和工具集"
+        "Description": "Breakpad 是一个开源、跨平台的崩溃报告系统的客户端和服务端组件。"
     }
 ]

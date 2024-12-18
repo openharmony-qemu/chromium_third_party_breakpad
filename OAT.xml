@@ -71,7 +71,7 @@ used to filter file path.
                 <policyitem type="compatibility" name="Unicode-TOU" path="src/common/.*" desc="经法务确认为宽松型许可证" />
                 <policyitem type="compatibility" name="FSFAP" path="INSTALL" desc="经法务确认为宽松型许可证" />
                 <policyitem type="compatibility" name="GPLStyleLicense" path="autotools/.*" desc="经法务确认,涉及文件在render下进行了隔离" />
-                <policyitem type="compatibility" name="GPLStyleLicense-with-Libtool-exception" path="m4/libtool.m4" desc="经法务确认为宽松型许可证" />
+                <policyitem type="compatibility" name="GPLStyleLicense-with-Libtool-exception" path="m4/libtool.m4" desc="经法务确认,涉及文件在render下进行了隔离" />
                 <policyitem type="compatibility" name="Unicode-TOU" path="LICENSE" desc="经法务确认为宽松型许可证" />
                 <policyitem type="compatibility" name="LGPLStyleLicense-with-Autoconf-exception-2.0" path="LICENSE" desc="经法务确认,涉及文件在render下进行了隔离" />
             </policy>
