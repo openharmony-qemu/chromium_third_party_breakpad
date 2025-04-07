@@ -346,13 +346,12 @@ LinuxDumper::ElfFileIdentifierForMapping(const MappingInfo& mapping,
     return false;
   bool filename_modified = HandleDeletedFileInMapping(filename);
 
-  MemoryMappedFile mapped_file(filename, mapping.offset);
+  MemoryMappedFile mapped_file(filename, 0);
   if (!mapped_file.data() || mapped_file.size() < SELFMAG)
     return false;
 
   bool success =
       FileID::ElfFileIdentifierFromMappedFile(mapped_file.data(), identifier);
-
   if (success && member && filename_modified) {
     mappings_[mapping_id]->name[my_strlen(mapping.name) -
                                 sizeof(kDeletedSuffix) + 1] = '\0';
@@ -460,7 +459,7 @@ bool ElfFileSoName(const LinuxDumper& dumper,
   if (!dumper.GetMappingAbsolutePath(mapping, filename))
     return false;
 
-  MemoryMappedFile mapped_file(filename, mapping.offset);
+  MemoryMappedFile mapped_file(filename, 0);
   if (!mapped_file.data() || mapped_file.size() < SELFMAG) {
     // mmap failed
     return false;
