@@ -237,7 +237,7 @@ ExceptionHandler::ExceptionHandler(const MinidumpDescriptor& descriptor,
       !minidump_descriptor_.IsMicrodumpOnConsole())
     minidump_descriptor_.UpdatePath();
 
-#if defined(__ANDROID__) && !defined(OSOHOS)
+#if defined(__ANDROID__)
   if (minidump_descriptor_.IsMicrodumpOnConsole())
     logger::initializeCrashLogWriter();
 #endif
