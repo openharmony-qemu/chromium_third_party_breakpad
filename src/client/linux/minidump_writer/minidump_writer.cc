@@ -56,7 +56,7 @@
 #include <fcntl.h>
 #include <link.h>
 #include <stdio.h>
-#if defined(__ANDROID__)
+#if defined(__ANDROID__) && !defined(OSOHOS)
 #include <sys/system_properties.h>
 #endif
 #include <sys/types.h>

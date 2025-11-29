@@ -100,7 +100,7 @@
 #include "common/linux/eintr_wrapper.h"
 #include "third_party/lss/linux_syscall_support.h"
 
-#if defined(__ANDROID__)
+#if defined(__ANDROID__) || defined(OSOHOS)
 #include "linux/sched.h"
 #endif
 
@@ -186,7 +186,7 @@ void RestoreAlternateStackLocked() {
 }
 
 void InstallDefaultHandler(int sig) {
-#if defined(__ANDROID__)
+#if defined(__ANDROID__) || defined(OSOHOS)
   // Android L+ expose signal and sigaction symbols that override the system
   // ones. There is a bug in these functions where a request to set the handler
   // to SIG_DFL is ignored. In that case, an infinite loop is entered as the

@@ -76,7 +76,7 @@ typedef wasteful_vector<uint8_t> id_vector;
 
 }  // namespace
 
-#ifndef __ANDROID__
+#if !defined(__ANDROID__) && !defined(OSOHOS)
 // This test is disabled on Android: It will always fail, since there is no
 // 'strip' binary installed on test devices.
 TEST(FileIDStripTest, StripSelf) {
