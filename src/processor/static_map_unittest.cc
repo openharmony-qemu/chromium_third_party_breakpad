@@ -30,17 +30,18 @@
 //
 // Author: Siyang Xie (lambxsy@google.com)
 
-#include <cstdint>
 #ifdef HAVE_CONFIG_H
 #include <config.h>  // Must come first
 #endif
 
-#include <climits>
+#include "processor/static_map-inl.h"
+
+#include <limits.h>
+#include <stdint.h>
+
 #include <map>
 
 #include "breakpad_googletest_includes.h"
-#include "processor/static_map-inl.h"
-
 
 typedef int ValueType;
 typedef int KeyType;
@@ -51,7 +52,7 @@ template<typename Key, typename Value>
 class SimpleMapSerializer {
  public:
   static char* Serialize(const std::map<Key, Value>& stdmap,
-                   unsigned int* size = NULL) {
+                   unsigned int* size = nullptr) {
     unsigned int size_per_node =
         sizeof(uint64_t) + sizeof(Key) + sizeof(Value);
     unsigned int memsize = sizeof(int64_t) + size_per_node * stdmap.size();

@@ -31,15 +31,19 @@
 //
 // Author: Siyang Xie (lambxsy@google.com)
 
-#include <cstdint>
 #ifdef HAVE_CONFIG_H
 #include <config.h>  // Must come first
 #endif
 
+#include "processor/static_contained_range_map-inl.h"
+
+#include <stdint.h>
+
+#include <memory>
+
 #include "breakpad_googletest_includes.h"
 #include "common/scoped_ptr.h"
 #include "processor/contained_range_map-inl.h"
-#include "processor/static_contained_range_map-inl.h"
 #include "processor/simple_serializer-inl.h"
 #include "processor/map_serializers-inl.h"
 #include "processor/logging.h"
@@ -243,7 +247,7 @@ TEST_F(TestStaticCRMMap, TestEmptyMap) {
   uint64_t size;
   scoped_array<char> serialized_data;
   serialized_data.reset(serializer_.Serialize(&empty_crm_map, &size));
-  scoped_ptr<TestMap> test_map(new TestMap(serialized_data.get()));
+  std::unique_ptr<TestMap> test_map(new TestMap(serialized_data.get()));
 
   const unsigned int kCorrectSizeForEmptyMap = 24;
   ASSERT_EQ(kCorrectSizeForEmptyMap, size);
@@ -263,7 +267,7 @@ TEST_F(TestStaticCRMMap, TestSingleElementMap) {
   uint64_t size;
   scoped_array<char> serialized_data;
   serialized_data.reset(serializer_.Serialize(&crm_map, &size));
-  scoped_ptr<TestMap> test_map(new TestMap(serialized_data.get()));
+  std::unique_ptr<TestMap> test_map(new TestMap(serialized_data.get()));
 
   const unsigned int kCorrectSizeForSingleElementMap = 60;
   ASSERT_EQ(kCorrectSizeForSingleElementMap, size);
@@ -287,7 +291,7 @@ TEST_F(TestStaticCRMMap, TestRetrieveRangeEntries) {
   uint64_t size;
   scoped_array<char> serialized_data;
   serialized_data.reset(serializer_.Serialize(&crm_map, &size));
-  scoped_ptr<TestMap> test_map(new TestMap(serialized_data.get()));
+  std::unique_ptr<TestMap> test_map(new TestMap(serialized_data.get()));
 
   std::vector<const int*> entry_tests;
   ASSERT_TRUE(test_map->RetrieveRanges(3, entry_tests));
